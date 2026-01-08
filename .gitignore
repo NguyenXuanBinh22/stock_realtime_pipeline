@@ -1,0 +1,55 @@
+# ======================
+# Python / Virtual env
+# ======================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+venv312/
+.env
+
+# ======================
+# Airflow
+# ======================
+airflow.cfg
+airflow.db
+logs/
+infra/logs/
+**/logs/
+**/*.log
+
+# ======================
+# Data / Storage
+# ======================
+data/
+bronze/
+silver/
+gold/
+minio_data/
+warehouse/
+
+# ======================
+# OS / IDE
+# ======================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ======================
+# dbt
+# ======================
+target/
+dbt_packages/
+logs/dbt.log
+
+# ======================
+# Secrets / Credentials
+# ======================
+*.json
+!dbt_stocks/*.json
+infra/airflow_gcp_key.json
+gcp_key.json
+service_account*.json

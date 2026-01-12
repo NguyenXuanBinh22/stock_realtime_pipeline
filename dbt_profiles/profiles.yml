@@ -1,0 +1,12 @@
+dbt_stocks:
+  target: prod
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account
+      project: real-time-stock-analytics-25
+      dataset: stock
+      threads: 4
+      keyfile: /opt/airflow/keys/airflow_gcp_key.json
+      timeout_seconds: 300
+      location: asia-southeast1

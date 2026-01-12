@@ -1,10 +1,14 @@
 FROM apache/airflow:2.9.3
 
-# Switch to airflow user (pip allowed)
+USER root
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends git \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
 USER airflow
 
-# Install Python packages inside Airflow's venv
 COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
-USER root
+USER airflow

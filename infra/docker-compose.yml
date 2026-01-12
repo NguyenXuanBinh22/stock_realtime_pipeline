@@ -78,7 +78,7 @@ services:
 
   airflow-webserver:
     build: .
-    image: airflow-custom:latest
+    image: airflow-custom:latest #custom
     container_name: airflow-webserver
     restart: always
     depends_on:
@@ -95,6 +95,9 @@ services:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
+      - ../dbt_stocks:/opt/airflow/dbt_stocks
+      - ../dbt_profiles:/opt/airflow/dbt_profiles
+      - ./airflow_gcp_key.json:/opt/airflow/keys/airflow_gcp_key.json:ro
 
       # 🔥 Mount file key vào container
       - ./airflow_gcp_key.json:/opt/airflow/airflow_gcp_key.json
@@ -105,7 +108,7 @@ services:
 
 
   airflow-scheduler:
-    image: airflow-custom:latest
+    image: airflow-custom:latest #custom
     container_name: airflow-scheduler
     restart: always
     depends_on:
@@ -123,6 +126,9 @@ services:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
+      - ../dbt_stocks:/opt/airflow/dbt_stocks
+      - ../dbt_profiles:/opt/airflow/dbt_profiles
+      - ./airflow_gcp_key.json:/opt/airflow/keys/airflow_gcp_key.json:ro
 
       # 🔥 Mount key
       - ./airflow_gcp_key.json:/opt/airflow/airflow_gcp_key.json

@@ -24,9 +24,6 @@ infra/logs/
 # Data / Storage
 # ======================
 data/
-bronze/
-silver/
-gold/
 minio_data/
 warehouse/
 
@@ -53,3 +50,13 @@ logs/dbt.log
 infra/airflow_gcp_key.json
 gcp_key.json
 service_account*.json
+
+
+ARCHITECTURE_DETAILED_ANALYSIS.md
+DOCKER_DEPLOYMENT.md
+SYSTEM_ARCHITECTURE.md
+PROJECT_OVERVIEW.md
+IMPROVEMENTS_ROADMAP.md
+KAFKA_PRODUCER_CONSUMER_ANALYSIS.md
+KAFKA_CONFIGURATION_DETAILS.md
+
